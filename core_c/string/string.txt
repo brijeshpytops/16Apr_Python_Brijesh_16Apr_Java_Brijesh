@@ -1,0 +1,113 @@
+a string is traditionally defined as a sequence of characters stored contiguously in memory, terminated by a null character ('\0').
+
+"c ptogram"
+
+Character Array: Strings in C are typically represented as arrays of characters (char[]) where the last character is a null terminator ('\0').
+
+char name[] = "python programming for everybody"
+
+Null Terminator: The null character ('\0') marks the end of the string and is used by string handling functions to determine the length of the string.
+
+Initializing and Using Strings:
+
+Initialization: Strings can be initialized using double quotes ("). For example:
+
+char arra_name[] = "python programming for everybody"
+char fname[] = {
+    'b', 'r', 'i', 'j', 'e', 's', 'h'
+};
+
+Accessing Characters: Individual characters in a string can be accessed using array notation ([]). For example:
+
+char first_char = greeting[0]; // Accesses 'H'
+
+Example :
+#include<stdio.h>
+
+void main(){
+    char full_name[] = "brijesh gondaliya";
+    
+    printf("%c", full_name[3]);
+}
+
+Find the len of the string
+
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char full_name[] = "brijesh gondaliya";
+    
+    printf("%d", strlen(full_name));
+}
+
+copy the strinf into the new string
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char fname[] = "brijesh gondaliya";
+    char copy_fname[100];
+    
+    strcpy(copy_fname, fname);
+    
+    printf("%s",copy_fname );
+}
+
+Con cat 2 or more Strings
+#include<stdio.h>
+#include<string.h>
+
+void main(){
+    char fname[100] = "brijesh";
+    char lname[] = "gondaliya";
+    
+    strcat(fname, lname);
+    
+    printf("%s",fname );
+}
+
+string comparison
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[] = "Apple";
+    char str2[] = "banana";
+    char str3[] = "apple";
+    
+    int result1 = strcmp(str1, str2);  // Compare "apple" and "banana"
+    int result2 = strcmp(str1, str3);  // Compare "apple" and "apple"
+    
+    printf("Comparison result (str1 vs str2): %d\n", result1);
+    printf("Comparison result (str1 vs str3): %d\n", result2);
+    
+    return 0;
+}
+
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   strcpy(str1, "abcdef");
+   strcpy(str2, "ABCDEF");
+
+   ret = strncmp(str1, str2, 6);
+
+   if(ret < 0) {
+      printf("str1 is less than str2");
+   } else if(ret > 0) {
+      printf("str2 is less than str1");
+   } else {
+      printf("str1 is equal to str2");
+   }
+   
+   return(0);
+}

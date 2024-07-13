@@ -1,0 +1,88 @@
+File handling in C refers to the process of creating, opening, reading, writing, and closing files. It allows a program to store data permanently on a storage device like a hard disk, which can be accessed later. C provides a standard library stdio.h which contains functions for file handling.
+
+1.] create file:
+
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+
+    f = fopen("sample.txt", "w");
+
+    if (f != NULL ){
+        printf("File created successfully");
+    }
+
+    fclose(f);
+
+}
+
+2.]Write data into the file:
+
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+    char data[100];
+
+    printf("Enter something...: ");
+    fgets(data, sizeof(data), stdin);
+
+    f = fopen("sample.txt", "w");
+
+    if (f != NULL ){
+        printf("File open successfully");
+    }else{
+        printf("File unable to open");
+    }
+
+    fprintf(f, "%s", data);
+
+
+    fclose(f);
+
+}
+
+3.]Read data from the file
+
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+    char data[100];
+
+    f = fopen("sample.txt", "r");
+
+    if (f != NULL ){
+        printf("File open successfully");
+    }else{
+        printf("File unable to open");
+    }
+
+    fgets(data, sizeof(data), f);
+
+    printf("DATA : %s", data);
+
+
+    fclose(f);
+
+}
+
+
+4.] file delete 
+
+#include<stdio.h>
+
+void main(){
+    char filename[] = "sample.txt";
+
+    int res = remove(filename);
+
+    if (res == 0){
+        printf("File deleted successfuly.");
+    }else{
+        printf("File unable to delete.");
+    }
+}
+
+

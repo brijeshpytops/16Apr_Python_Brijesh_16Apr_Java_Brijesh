@@ -1,0 +1,31 @@
+In C programming, a pointer is a variable that stores the memory address of another variable. It allows direct manipulation of memory addresses and provides a way to access and manipulate data indirectly. Here are some key points about pointers in C:
+
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *y;
+    
+    y = &x;
+    
+    printf("%d\n", y);
+    printf("%d", *y);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int x = 10;
+    int *ptr = &x;  // Pointer ptr holds the address of x
+    
+    printf("Value of x: %d\n", x);      // Output: 10
+    printf("Address of x: %p\n", &x);   // Output: Address of x in memory
+    printf("Value pointed to by ptr: %d\n", *ptr);  // Output: 10
+    
+    *ptr = 20;  // Change value of x using pointer
+    printf("New value of x: %d\n", x);  // Output: 20
+    
+    return 0;
+}

@@ -1,0 +1,17 @@
+In C, both structures (struct) and unions (union) are used to define custom data types that can hold multiple variables of different types.
+
+syntax :
+
+struct data_type_name{
+    data_type0 var_name0;
+    data_type1 var_name1;
+    data_type2 var_name1;
+};
+
+struct data_type_name{
+    data_type0 var_name0;
+    data_type1 var_name1;
+    data_type2 var_name1;
+}obj1, obj2; // set object
+
+struct data_type_name obj1, obj2; // set object inside main function

@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 7;
+    for (int row = 1; row <= num; row++) {
+        // Print increasing numbers
+        for (int col = 1; col <= num - row + 1; col++) {
+            cout << col;
+        }
+        // Print dashes
+        for (int col = 1; col < row; col++) {
+            cout << "-";
+        }
+        for (int col = 1; col < row - 1; col++) {
+            cout << "-";
+        }
+        // Print decreasing numbers
+        for (int col = num - row + 1; col >= 1; col--) {
+            cout << col;
+        }
+        cout << endl;
+    }
+    return 0;
+}
